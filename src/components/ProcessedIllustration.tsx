@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { removeBackground, loadImageFromUrl } from "@/utils/backgroundRemoval";
 
 // Using the uploaded image URL directly
-const originalImageUrl = "/lovable-uploads/3d9dead4-24c7-4f16-8be1-67a85c512f87.png";
+const originalImageUrl = "/lovable-uploads/4021830a-cf22-4f62-8e40-3f14dc709c53.png";
 
 const ProcessedIllustration = () => {
   const [processedImageUrl, setProcessedImageUrl] = useState<string | null>(null);
