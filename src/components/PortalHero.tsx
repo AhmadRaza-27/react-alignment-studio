@@ -1,4 +1,4 @@
-import portalIllustration from "@/assets/portal-illustration.png";
+import ProcessedIllustration from "@/components/ProcessedIllustration";
 
 const PortalHero = () => {
   return (
@@ -14,13 +14,7 @@ const PortalHero = () => {
         </p>
       </div>
       
-      <div className="w-full max-w-md mx-auto lg:mx-0">
-        <img 
-          src={portalIllustration} 
-          alt="Intern management illustration" 
-          className="w-full h-auto object-contain"
-        />
-      </div>
+      <ProcessedIllustration />
     </div>
   );
 };
