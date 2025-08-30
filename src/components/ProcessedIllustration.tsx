@@ -18,7 +18,7 @@ const ProcessedIllustration = () => {
         // Load the original image
         const imageElement = await loadImageFromUrl(originalImageUrl);
         
-        // Remove background and add white background
+        // Remove background and add blue gradient background
         const processedBlob = await removeBackground(imageElement);
         
         // Create URL for the processed image
@@ -71,7 +71,7 @@ const ProcessedIllustration = () => {
       <img 
         src={processedImageUrl || originalImageUrl}
         alt="Intern management illustration" 
-        className="w-full h-auto object-contain bg-white rounded-lg"
+        className="w-full h-auto object-contain rounded-lg"
       />
       {error && (
         <p className="text-xs text-muted-foreground mt-2 text-center">

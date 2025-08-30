@@ -62,7 +62,7 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
       throw new Error('Invalid segmentation result');
     }
     
-    // Create a new canvas for the masked image with white background
+    // Create a new canvas for the masked image with blue gradient background
     const outputCanvas = document.createElement('canvas');
     outputCanvas.width = canvas.width;
     outputCanvas.height = canvas.height;
@@ -70,8 +70,11 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
     
     if (!outputCtx) throw new Error('Could not get output canvas context');
     
-    // Fill with white background first
-    outputCtx.fillStyle = 'white';
+    // Fill with blue gradient background to match the UI
+    const gradient = outputCtx.createLinearGradient(0, 0, outputCanvas.width, outputCanvas.height);
+    gradient.addColorStop(0, '#3B82F6');
+    gradient.addColorStop(1, '#1E40AF');
+    outputCtx.fillStyle = gradient;
     outputCtx.fillRect(0, 0, outputCanvas.width, outputCanvas.height);
     
     // Draw original image
@@ -85,17 +88,17 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
     );
     const data = outputImageData.data;
     
-    // Apply inverted mask to alpha channel and set background to white
+    // Apply inverted mask to alpha channel and set background to blue
     for (let i = 0; i < result[0].mask.data.length; i++) {
       const pixelIndex = i * 4;
       // Invert the mask value (1 - value) to keep the subject instead of the background
       const alpha = Math.round((1 - result[0].mask.data[i]) * 255);
       
       if (alpha < 128) {
-        // Background pixel - make it white
-        data[pixelIndex] = 255;     // R
-        data[pixelIndex + 1] = 255; // G
-        data[pixelIndex + 2] = 255; // B
+        // Background pixel - make it blue to match the gradient
+        data[pixelIndex] = 59;      // R (blue #3B82F6)
+        data[pixelIndex + 1] = 130; // G
+        data[pixelIndex + 2] = 246; // B
         data[pixelIndex + 3] = 255; // A
       } else {
         // Keep the subject pixel as is
@@ -104,7 +107,7 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
     }
     
     outputCtx.putImageData(outputImageData, 0, 0);
-    console.log('Mask applied successfully with white background');
+    console.log('Mask applied successfully with blue background');
     
     // Convert canvas to blob
     return new Promise((resolve, reject) => {
