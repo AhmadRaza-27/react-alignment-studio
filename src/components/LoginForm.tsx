@@ -1,0 +1,86 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle login logic here
+    console.log("Login attempt:", { email, password });
+  };
+
+  return (
+    <div className="w-full max-w-md mx-auto bg-card rounded-xl p-8 shadow-sm">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-semibold text-primary mb-2">Welcome!</h2>
+        <p className="text-muted-foreground text-sm">Sign into C&T Intern Management Portal</p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-2">
+          <Label htmlFor="email" className="text-sm font-medium text-foreground">
+            Email Address
+          </Label>
+          <Input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full h-12 bg-portal-light border-0 rounded-lg placeholder:text-muted-foreground"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="password" className="text-sm font-medium text-foreground">
+            Password
+          </Label>
+          <Input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full h-12 bg-portal-light border-0 rounded-lg placeholder:text-muted-foreground"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <Button
+          type="submit"
+          className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-colors"
+        >
+          Sign In
+        </Button>
+
+        <p className="text-center text-sm text-muted-foreground">
+          Don't have an account?{" "}
+          <a href="#" className="text-primary hover:underline font-medium">
+            Sign up
+          </a>
+        </p>
+      </form>
+
+      <div className="mt-8 pt-6 border-t border-border">
+        <p className="text-xs text-muted-foreground mb-3 font-medium">Demo Accounts</p>
+        <div className="space-y-2">
+          <div className="text-xs">
+            <span className="font-medium text-primary">Admin:</span>{" "}
+            <span className="text-muted-foreground">admin@coach.endouti.edu.ph/admin123</span>
+          </div>
+          <div className="text-xs">
+            <span className="font-medium text-primary">Student:</span>{" "}
+            <span className="text-muted-foreground">student@coach.endouti.edu.ph/student123</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LoginForm;
