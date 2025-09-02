@@ -2,15 +2,42 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "@/components/ui/use-toast";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log("Login attempt:", { email, password });
+    setIsLoading(true);
+    
+    // Mock authentication logic
+    setTimeout(() => {
+      if (email === "admin@cloud.neduet.edu.pk" && password === "admin123") {
+        toast({
+          title: "Login Successful",
+          description: "Welcome to the Admin Dashboard!",
+        });
+        navigate("/admin-dashboard");
+      } else if (email === "student@cloud.neduet.edu.pk" && password === "student123") {
+        toast({
+          title: "Login Successful", 
+          description: "Welcome Student! (Dashboard coming soon)",
+        });
+      } else {
+        toast({
+          title: "Login Failed",
+          description: "Invalid email or password. Please try again.",
+          variant: "destructive",
+        });
+      }
+      setIsLoading(false);
+    }, 1000);
   };
 
   return (
@@ -53,9 +80,10 @@ const LoginForm = () => {
 
         <Button
           type="submit"
+          disabled={isLoading}
           className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-colors"
         >
-          Sign In
+          {isLoading ? "Signing In..." : "Sign In"}
         </Button>
 
         <p className="text-center text-sm text-muted-foreground">
@@ -71,11 +99,11 @@ const LoginForm = () => {
         <div className="space-y-2">
           <div className="text-xs">
             <span className="font-medium text-primary">Admin:</span>{" "}
-            <span className="text-muted-foreground">admin@coach.endouti.edu.ph/admin123</span>
+            <span className="text-muted-foreground">admin@cloud.neduet.edu.pk/admin123</span>
           </div>
           <div className="text-xs">
             <span className="font-medium text-primary">Student:</span>{" "}
-            <span className="text-muted-foreground">student@coach.endouti.edu.ph/student123</span>
+            <span className="text-muted-foreground">student@cloud.neduet.edu.pk/student123</span>
           </div>
         </div>
       </div>
