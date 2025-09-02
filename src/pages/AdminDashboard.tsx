@@ -14,6 +14,13 @@ const AdminDashboard = () => {
     navigate("/");
   };
 
+  const handleNavigation = (item: string) => {
+    setActiveItem(item);
+    if (item === "Intern Management") {
+      navigate("/intern-management");
+    }
+  };
+
   const sidebarItems = [
     { icon: LayoutDashboard, label: "Dashboard", active: true },
     { icon: Users, label: "Intern Management" },
@@ -92,7 +99,7 @@ const AdminDashboard = () => {
           {sidebarItems.map((item, index) => (
             <button
               key={index}
-              onClick={() => setActiveItem(item.label)}
+              onClick={() => handleNavigation(item.label)}
               className={`w-full flex items-center px-3 py-3 rounded-lg transition-all duration-200 ${
                 item.label === activeItem 
                   ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600' 
