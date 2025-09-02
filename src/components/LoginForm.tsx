@@ -14,7 +14,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-card rounded-xl p-8 shadow-sm">
+    <div className="w-full max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-lg border border-white/20">
       <div className="text-center mb-8">
         <h2 className="text-2xl font-semibold text-primary mb-2">Welcome!</h2>
         <p className="text-muted-foreground text-sm">Sign into C&T Intern Management Portal</p>
