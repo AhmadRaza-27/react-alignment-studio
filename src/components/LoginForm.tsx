@@ -27,8 +27,9 @@ const LoginForm = () => {
       } else if (email === "student@cloud.neduet.edu.pk" && password === "student123") {
         toast({
           title: "Login Successful", 
-          description: "Welcome Student! (Dashboard coming soon)",
+          description: "Welcome to the Student Dashboard!",
         });
+        navigate("/student-dashboard");
       } else {
         toast({
           title: "Login Failed",
