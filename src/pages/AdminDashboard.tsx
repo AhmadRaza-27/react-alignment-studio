@@ -22,6 +22,8 @@ const AdminDashboard = () => {
       navigate("/task-management");
     } else if (item === "Attendance Reports") {
       navigate("/attendance-reports");
+    } else if (item === "Program Reports") {
+      navigate("/program-reports");
     }
   };
 

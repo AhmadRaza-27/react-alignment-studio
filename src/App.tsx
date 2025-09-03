@@ -8,6 +8,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import InternManagement from "./pages/InternManagement";
 import TaskManagement from "./pages/TaskManagement";
 import AttendanceReports from "./pages/AttendanceReports";
+import ProgramReports from "./pages/ProgramReports";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/intern-management" element={<InternManagement />} />
           <Route path="/task-management" element={<TaskManagement />} />
           <Route path="/attendance-reports" element={<AttendanceReports />} />
+          <Route path="/program-reports" element={<ProgramReports />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
