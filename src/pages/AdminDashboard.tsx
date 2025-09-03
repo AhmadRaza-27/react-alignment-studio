@@ -18,6 +18,8 @@ const AdminDashboard = () => {
     setActiveItem(item);
     if (item === "Intern Management") {
       navigate("/intern-management");
+    } else if (item === "Task Management") {
+      navigate("/task-management");
     }
   };
 

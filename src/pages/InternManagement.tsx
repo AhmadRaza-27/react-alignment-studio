@@ -20,6 +20,8 @@ const InternManagement = () => {
     setActiveItem(item);
     if (item === "Dashboard") {
       navigate("/admin-dashboard");
+    } else if (item === "Task Management") {
+      navigate("/task-management");
     }
   };
 
