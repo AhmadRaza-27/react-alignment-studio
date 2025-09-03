@@ -20,6 +20,8 @@ const AdminDashboard = () => {
       navigate("/intern-management");
     } else if (item === "Task Management") {
       navigate("/task-management");
+    } else if (item === "Attendance Reports") {
+      navigate("/attendance-reports");
     }
   };
 
