@@ -36,6 +36,10 @@ const StudentDashboard = () => {
   const handleNavigation = (path: string, label: string) => {
     if (path === "/student-tasks") {
       navigate(path);
+    } else if (path === "/student-attendance") {
+      navigate(path);
+    } else if (path === "/student-profile") {
+      navigate(path);
     } else {
       setActiveTab(label);
     }
