@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AdminDashboard from "./pages/AdminDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
+import StudentTasks from "./pages/StudentTasks";
 import InternManagement from "./pages/InternManagement";
 import TaskManagement from "./pages/TaskManagement";
 import AttendanceReports from "./pages/AttendanceReports";
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
+          <Route path="/student-tasks" element={<StudentTasks />} />
           <Route path="/intern-management" element={<InternManagement />} />
           <Route path="/task-management" element={<TaskManagement />} />
           <Route path="/attendance-reports" element={<AttendanceReports />} />

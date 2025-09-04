@@ -33,6 +33,14 @@ const StudentDashboard = () => {
     navigate("/");
   };
 
+  const handleNavigation = (path: string, label: string) => {
+    if (path === "/student-tasks") {
+      navigate(path);
+    } else {
+      setActiveTab(label);
+    }
+  };
+
   const todaysTasks = [
     {
       title: "Database Design Review",
@@ -86,7 +94,7 @@ const StudentDashboard = () => {
             {sidebarItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => setActiveTab(item.label)}
+                onClick={() => handleNavigation(item.path, item.label)}
                 className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${
                   activeTab === item.label
                     ? "bg-primary/10 text-primary border-l-4 border-primary"
