@@ -42,16 +42,16 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-white rounded-xl p-8 shadow-lg">
+    <div className="w-full max-w-md mx-auto bg-white rounded-2xl p-8 shadow-lg">
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-2">Welcome!</h2>
-        <p className="text-gray-600 text-sm mb-1">Sign into C&IT Intern Management Portal</p>
-        <p className="text-gray-500 text-xs">(Use your @cloud.neduet.edu.pk Google account credentials to sign in.)</p>
+        <h2 className="text-3xl font-bold text-gray-800 mb-3">Welcome!</h2>
+        <p className="text-gray-600 text-base mb-2 font-medium">Sign into C&IT Intern Management Portal</p>
+        <p className="text-gray-500 text-sm">(Use your @cloud.neduet.edu.pk Google account credentials to sign in.)</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="space-y-2">
-          <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+        <div className="space-y-3">
+          <Label htmlFor="email" className="text-sm font-semibold text-gray-800">
             Email Address
           </Label>
           <Input
@@ -59,18 +59,18 @@ const LoginForm = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full h-12 bg-gray-50 border border-gray-200 rounded-lg placeholder:text-gray-400"
-            placeholder="Enter your email"
+            className="w-full h-14 bg-gray-50 border border-gray-200 rounded-xl placeholder:text-gray-400 text-base px-4"
+            placeholder=""
             required
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div className="flex justify-between items-center">
-            <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="password" className="text-sm font-semibold text-gray-800">
               Password
             </Label>
-            <a href="#" className="text-xs text-blue-600 hover:underline">
+            <a href="#" className="text-sm text-blue-600 hover:underline font-medium">
               Forgot your password?
             </a>
           </div>
@@ -79,8 +79,8 @@ const LoginForm = () => {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full h-12 bg-gray-50 border border-gray-200 rounded-lg placeholder:text-gray-400"
-            placeholder="Enter your password"
+            className="w-full h-14 bg-gray-50 border border-gray-200 rounded-xl placeholder:text-gray-400 text-base px-4"
+            placeholder=""
             required
           />
         </div>
@@ -88,7 +88,7 @@ const LoginForm = () => {
         <Button
           type="submit"
           disabled={isLoading}
-          className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+          className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-colors text-base"
         >
           {isLoading ? "Signing In..." : "Sign In"}
         </Button>
@@ -101,10 +101,10 @@ const LoginForm = () => {
         </p>
       </form>
 
-      <div className="mt-6">
+      <div className="mt-8">
         <Button 
           variant="outline" 
-          className="w-full h-12 bg-gray-700 hover:bg-gray-600 text-white border-gray-600 rounded-lg flex items-center justify-center gap-2"
+          className="w-full h-12 bg-gray-700 hover:bg-gray-600 text-white border-gray-600 rounded-lg flex items-center justify-center gap-3"
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24">
             <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -112,20 +112,20 @@ const LoginForm = () => {
             <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
             <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
           </svg>
-          Sign up with Google
+          Continue with Google
         </Button>
       </div>
 
       <div className="mt-8 pt-6 border-t border-gray-200">
-        <p className="text-xs text-gray-600 mb-3 font-medium">Demo Accounts</p>
-        <div className="space-y-2">
-          <div className="text-xs">
-            <span className="font-medium text-blue-600">Admin:</span>{" "}
-            <span className="text-gray-600">admin@cloud.neduet.edu.pk/admin123</span>
+        <p className="text-sm text-gray-700 mb-4 font-semibold">Demo Accounts</p>
+        <div className="space-y-3">
+          <div className="text-sm">
+            <span className="font-semibold text-blue-600">Admin:</span>{" "}
+            <span className="text-gray-700">admin@cloud.neduet.edu.pk/admin123</span>
           </div>
-          <div className="text-xs">
-            <span className="font-medium text-blue-600">Student:</span>{" "}
-            <span className="text-gray-600">student@cloud.neduet.edu.pk/student123</span>
+          <div className="text-sm">
+            <span className="font-semibold text-blue-600">Student:</span>{" "}
+            <span className="text-gray-700">student@cloud.neduet.edu.pk/student123</span>
           </div>
         </div>
       </div>
