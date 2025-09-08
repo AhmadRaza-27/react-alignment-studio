@@ -24,6 +24,8 @@ const AdminDashboard = () => {
       navigate("/attendance-reports");
     } else if (item === "Program Reports") {
       navigate("/program-reports");
+    } else if (item === "Timetable & Scheduling") {
+      navigate("/admin-timetable");
     }
   };
 
@@ -32,7 +34,8 @@ const AdminDashboard = () => {
     { icon: Users, label: "Intern Management" },
     { icon: ClipboardList, label: "Task Management" },
     { icon: FileText, label: "Attendance Reports" },
-    { icon: BarChart3, label: "Program Reports" }
+    { icon: BarChart3, label: "Program Reports" },
+    { icon: Calendar, label: "Timetable & Scheduling" }
   ];
 
   const programStats = [
