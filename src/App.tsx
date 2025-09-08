@@ -8,6 +8,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import StudentDashboard from "./pages/StudentDashboard";
 import StudentTasks from "./pages/StudentTasks";
 import StudentAttendance from "./pages/StudentAttendance";
+import StudentTimetable from "./pages/StudentTimetable";
 import StudentProfile from "./pages/StudentProfile";
 import InternManagement from "./pages/InternManagement";
 import TaskManagement from "./pages/TaskManagement";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route path="/student-tasks" element={<StudentTasks />} />
           <Route path="/student-attendance" element={<StudentAttendance />} />
+          <Route path="/student-timetable" element={<StudentTimetable />} />
           <Route path="/student-profile" element={<StudentProfile />} />
           <Route path="/intern-management" element={<InternManagement />} />
           <Route path="/task-management" element={<TaskManagement />} />

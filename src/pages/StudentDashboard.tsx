@@ -38,6 +38,8 @@ const StudentDashboard = () => {
       navigate(path);
     } else if (path === "/student-attendance") {
       navigate(path);
+    } else if (path === "/student-timetable") {
+      navigate(path);
     } else if (path === "/student-profile") {
       navigate(path);
     } else {
