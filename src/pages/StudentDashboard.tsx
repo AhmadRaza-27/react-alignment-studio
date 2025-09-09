@@ -101,14 +101,14 @@ const StudentDashboard = () => {
               <button
                 key={item.label}
                 onClick={() => handleNavigation(item.path, item.label)}
-                className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${
+                className={`w-full flex items-center space-x-3 px-3 py-3 rounded-lg text-left transition-colors ${
                   activeTab === item.label
                     ? "bg-primary/10 text-primary border-l-4 border-primary"
                     : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                 }`}
               >
-                <item.icon className="w-5 h-5" />
-                <span className="font-medium">{item.label}</span>
+                <item.icon className="w-5 h-5 flex-shrink-0" />
+                <span className="font-medium text-sm leading-tight">{item.label}</span>
               </button>
             ))}
           </nav>

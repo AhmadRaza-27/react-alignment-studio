@@ -109,14 +109,14 @@ const AdminDashboard = () => {
             <button
               key={index}
               onClick={() => handleNavigation(item.label)}
-              className={`w-full flex items-center px-3 py-3 rounded-lg transition-all duration-200 ${
+              className={`w-full flex items-center px-3 py-3 rounded-lg text-left transition-all duration-200 ${
                 item.label === activeItem 
                   ? 'bg-blue-50 text-blue-600 border-l-4 border-blue-600' 
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >
-              <item.icon className="w-5 h-5" />
-              <span className="ml-3 font-medium">{item.label}</span>
+              <item.icon className="w-5 h-5 flex-shrink-0" />
+              <span className="ml-3 font-medium text-sm leading-tight">{item.label}</span>
             </button>
           ))}
         </nav>
