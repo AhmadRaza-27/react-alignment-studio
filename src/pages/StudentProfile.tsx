@@ -31,14 +31,17 @@ const StudentProfile = () => {
   };
 
   const handleNavigation = (path: string, label: string) => {
-    if (path === "/student-tasks") {
-      navigate(path);
-    } else if (path === "/student-dashboard") {
-      navigate(path);
+    setActiveTab(label);
+    if (path === "/student-dashboard") {
+      navigate("/student-dashboard");
+    } else if (path === "/student-tasks") {
+      navigate("/student-tasks");
     } else if (path === "/student-attendance") {
-      navigate(path);
-    } else {
-      setActiveTab(label);
+      navigate("/student-attendance");
+    } else if (path === "/student-timetable") {
+      navigate("/student-timetable");
+    } else if (path === "/student-profile") {
+      navigate("/student-profile");
     }
   };
 
@@ -95,8 +98,8 @@ const StudentProfile = () => {
                     : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                 }`}
               >
-                <item.icon className="w-5 h-5" />
-                <span className="font-medium">{item.label}</span>
+                <item.icon className="w-5 h-5 flex-shrink-0" />
+                <span className="font-medium text-sm leading-tight">{item.label}</span>
               </button>
             ))}
           </nav>

@@ -30,10 +30,17 @@ const StudentTasks = () => {
   };
 
   const handleNavigation = (path: string, label: string) => {
+    setActiveTab(label);
     if (path === "/student-dashboard") {
-      navigate(path);
-    } else {
-      setActiveTab(label);
+      navigate("/student-dashboard");
+    } else if (path === "/student-tasks") {
+      navigate("/student-tasks");
+    } else if (path === "/student-attendance") {
+      navigate("/student-attendance");
+    } else if (path === "/student-timetable") {
+      navigate("/student-timetable");
+    } else if (path === "/student-profile") {
+      navigate("/student-profile");
     }
   };
 
@@ -112,8 +119,8 @@ const StudentTasks = () => {
                     : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                 }`}
               >
-                <item.icon className="w-5 h-5" />
-                <span className="font-medium">{item.label}</span>
+                <item.icon className="w-5 h-5 flex-shrink-0" />
+                <span className="font-medium text-sm leading-tight">{item.label}</span>
               </button>
             ))}
           </nav>
