@@ -12,11 +12,11 @@ import {
   LogOut,
   Edit
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const StudentProfile = () => {
-  const [activeTab, setActiveTab] = useState("Profile");
   const navigate = useNavigate();
+  const location = useLocation();
 
   const sidebarItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/student-dashboard" },
@@ -31,18 +31,7 @@ const StudentProfile = () => {
   };
 
   const handleNavigation = (path: string, label: string) => {
-    setActiveTab(label);
-    if (path === "/student-dashboard") {
-      navigate("/student-dashboard");
-    } else if (path === "/student-tasks") {
-      navigate("/student-tasks");
-    } else if (path === "/student-attendance") {
-      navigate("/student-attendance");
-    } else if (path === "/student-timetable") {
-      navigate("/student-timetable");
-    } else if (path === "/student-profile") {
-      navigate("/student-profile");
-    }
+    navigate(path);
   };
 
   const skills = [
@@ -93,7 +82,7 @@ const StudentProfile = () => {
                 key={item.label}
                 onClick={() => handleNavigation(item.path, item.label)}
                 className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-left transition-colors ${
-                  activeTab === item.label
+                  location.pathname === item.path
                     ? "bg-primary/10 text-primary border-l-4 border-primary"
                     : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
                 }`}
