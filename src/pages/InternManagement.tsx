@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LayoutDashboard, Users, ClipboardList, FileText, Calendar, LogOut, Search, ChevronDown, UserPlus } from "lucide-react";
+import { LayoutDashboard, Users, ClipboardList, FileText, Calendar, LogOut, Search, ChevronDown, UserPlus, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +22,12 @@ const InternManagement = () => {
       navigate("/admin-dashboard");
     } else if (item === "Task Management") {
       navigate("/task-management");
+    } else if (item === "Attendance Reports") {
+      navigate("/attendance-reports");
+    } else if (item === "Program Reports") {
+      navigate("/program-reports");
+    } else if (item === "Timetable & Scheduling") {
+      navigate("/admin-timetable");
     }
   };
 
@@ -30,7 +36,8 @@ const InternManagement = () => {
     { icon: Users, label: "Intern Management", active: true },
     { icon: ClipboardList, label: "Task Management" },
     { icon: FileText, label: "Attendance Reports" },
-    { icon: Calendar, label: "Program Reports" }
+    { icon: BarChart3, label: "Program Reports" },
+    { icon: Calendar, label: "Timetable & Scheduling" }
   ];
 
   const stats = [
@@ -107,8 +114,8 @@ const InternManagement = () => {
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >
-              <item.icon className="w-5 h-5" />
-              <span className="ml-3 font-medium">{item.label}</span>
+              <item.icon className="w-5 h-5 flex-shrink-0" />
+              <span className="ml-3 font-medium text-sm leading-tight">{item.label}</span>
             </button>
           ))}
         </nav>

@@ -20,6 +20,12 @@ const TaskManagement = () => {
       navigate("/admin-dashboard");
     } else if (item === "Intern Management") {
       navigate("/intern-management");
+    } else if (item === "Attendance Reports") {
+      navigate("/attendance-reports");
+    } else if (item === "Program Reports") {
+      navigate("/program-reports");
+    } else if (item === "Timetable & Scheduling") {
+      navigate("/admin-timetable");
     }
   };
 
@@ -28,7 +34,8 @@ const TaskManagement = () => {
     { icon: Users, label: "Intern Management" },
     { icon: ClipboardList, label: "Task Management", active: true },
     { icon: FileText, label: "Attendance Reports" },
-    { icon: BarChart3, label: "Program Reports" }
+    { icon: BarChart3, label: "Program Reports" },
+    { icon: Calendar, label: "Timetable & Scheduling" }
   ];
 
   const tasks = {
@@ -131,8 +138,8 @@ const TaskManagement = () => {
                   : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
               }`}
             >
-              <item.icon className="w-5 h-5" />
-              <span className="ml-3 font-medium">{item.label}</span>
+              <item.icon className="w-5 h-5 flex-shrink-0" />
+              <span className="ml-3 font-medium text-sm leading-tight">{item.label}</span>
             </button>
           ))}
         </nav>
